@@ -1,5 +1,5 @@
 var Ajax = new Class(function (defaults) {
-  var query;
+    var query;
 
 	defaults = defaults || {};
 	defaults.method = defaults.method || 'GET';
