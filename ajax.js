@@ -15,23 +15,27 @@ var Ajax = new Class(function (defaults) {
 
 	    label = label || '';
 
-	    if (
-    		obj.constructor === Number ||
-    		obj.constructor === String ||
-    		obj.constructor === Boolean ||
-    		obj.constructor === Date
-		) {
-            return label + '=' + escape(obj);
-	    } else if (obj.constructor === Object) {
-	        for (key in obj) {
-	            if (obj.hasOwnProperty(key)) {
-	            	query_string += query(obj[key], (label ? label + '[' + key + ']' : key)) + '&';
-	            }
-	        }
-	        return query_string.slice(0, query_string.length - 1);
-	    } else {
-	    	return label + '=' + escape(obj);
-	    }
+        if (obj) {
+    	    if (
+        		obj.constructor === Number ||
+        		obj.constructor === String ||
+        		obj.constructor === Boolean ||
+        		obj.constructor === Date
+    		) {
+                return label + '=' + escape(obj);
+    	    } else if (obj.constructor === Object) {
+    	        for (key in obj) {
+    	            if (obj.hasOwnProperty(key)) {
+    	            	query_string += query(obj[key], (label ? label + '[' + key + ']' : key)) + '&';
+    	            }
+    	        }
+    	        return query_string.slice(0, query_string.length - 1);
+    	    } else {
+    	    	return label + '=' + escape(obj);
+    	    }
+        } else {
+            return '';
+        }
 	};
 
 	this.request = function (url, params) {
