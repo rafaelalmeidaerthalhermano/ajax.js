@@ -58,3 +58,7 @@ Usage example:
 ```js
 
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rafaelalmeidaerthalhermano/ajax.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
